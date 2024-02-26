@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adarsh Task</title>
+        <link rel="stylesheet" href="">
+        <style>
+            .maigret-container {
+                white-space: pre-line;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="{% url 'home_page' %}" method="POST">
+            {% csrf_token %}
+            <div>User Name: <input type="text" name="user_name"></div>
+            <div>First Name: <input type="text" name="first_name"></div>
+            <div>Last Name: <input type="text" name="last_name"></div>
+            <div>Email ID: <input type="text" name="email"></div>
+            <div>Phone Num: <input type="text" name="contact"></div>
+
+            <input type="submit">
+        </form>
+
+        {% if error %}
+            {{error}}
+        {% endif %}
+
+        <h3>maigret</h3>
+        <div class="maigret-container">
+            {% if maigret %}
+                {{maigret}}
+            {% endif %}
+        </div>
+
+        <h3>yesitsme</h3>
+        <div class="maigret-container">
+        {% if yesitsme %}
+            {{yesitsme}}
+        {% endif %}
+        </div>
+
+        <h3>daprofiler</h3>
+        <div class="maigret-container">
+        {% if daprofiler %}
+            {{daprofiler}}
+        {% endif %}
+    </div>
+    </body>
+</html>
